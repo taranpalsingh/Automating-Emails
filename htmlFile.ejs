@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<style>
+  h1{
+    margin: 30px auto 50px auto;
+  }
+  .card{
+    width: 18rem;
+    margin: 20px auto;
+  }
+  img{
+    padding: 10px;
+  }
+</style>
+<body>
+
+  <h1 class="text-center">This has been sent from the Node JS API. </h1>
+  <div class="row">
+    <div class="col-md-4 offset-md-4 col-sm-6 offset-sm-3 col-xs-8  offset-xs-2">
+      <div class="card">
+        <!-- <img src="./logo2.jpg" class="card-img-top img img-fluid" alt="supposed to be an image"> -->
+        <img src="cid:unique" class="card-img-top img img-fluid" alt="Image">
+        <div class="card-body">
+          <h5 class="card-text text-center"> <%= fileName%>  </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+</html>
