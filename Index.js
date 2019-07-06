@@ -24,6 +24,7 @@ app.post('/sendDelayedEmail', async function(req,res){
   else{
     imageData = req.body.Data;
   }
+
   var transporter = await nodemailer.createTransport({
     host: config.smtp,
     port: 465,
@@ -62,15 +63,19 @@ app.post('/sendDelayedEmail', async function(req,res){
           }
         ]
       };
-      transporter.sendMail(mainOptions, function (err) {
-        if (err) {
-          console.log(err);
-          res.status(400).send("Please try later.");
-        }else{
-          console.log("A mail will be sent to you after " + req.body.Timeout +" seconds");
-          res.status(200).send("A mail will be sent to you after " + req.body.Timeout +" seconds");
-        }
-      });
+
+      res.status(200).send("A mail will be sent to you after " + req.body.Timeout +" seconds");
+      console.log("A mail will be sent to you after " + req.body.Timeout +" seconds");
+
+      setTimeout(function(){
+        transporter.sendMail(mainOptions, function (err) {
+          if (err) {
+            console.log(err);
+            res.status(400).send("Please try later.");
+          }
+        });
+        console.log("Check your email now");
+        }, (req.body.Timeout*1000));
     }
   });
 });

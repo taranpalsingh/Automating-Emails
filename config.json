@@ -1,7 +1,7 @@
 {
-  "username": "Taran",
+  "username": "yourName",
+  "password": "yourPassword",
+  "email": "yourEmail",
   "port": 3000,
-  "smtp": "smtp.gmail.com",
-  "password": "P20@nice",
-  "email": "taranpal.singh23@gmail.com"
+  "smtp": "smtp.gmail.com"
 }
