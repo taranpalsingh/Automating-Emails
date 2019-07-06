@@ -67,7 +67,7 @@ app.post('/sendDelayedEmail', async function(req,res){
       res.status(200).send("A mail will be sent to you after " + req.body.Timeout +" seconds");
       console.log("A mail will be sent to you after " + req.body.Timeout +" seconds");
 
-      setTimeout(function(){
+      setTimeout( function(){
         transporter.sendMail(mainOptions, function (err) {
           if (err) {
             console.log(err);
